@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<!---METAS-->
+		<meta charset="utf-8">
+		<meta name="description" content="Personal Website">
+		<meta name="Author" content="Anthony Estrella">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="view-transition" content="same-origin">
+
+		<title>Anthony's Website</title>
+
+		<!---Links-->
+		<link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+		<link rel="stylesheet" href="../styles/style.css">
+	</head>
+
+	<body>
+
+		<header class="bodyHeader">
+			<div class="titleImage">
+				<h1>Anthony Estrella</h1>
+				<picture>
+					<source srcset="../images/iconBigger.webp" type="image/webp">
+					<img 
+						src="../images/iconBigger.png" 
+						alt="A blue orb with tiny turqouise like stars with it.
+							 On the left side is a white highlight which slowly 
+							 becomes darker as it moves towards the center."
+						width="50"
+						height="50"
+					>	
+				</picture>
+			</div>
+			<nav>
+				<ul>
+					<li> <a href="../index.html"> Homepage </a> </li>
+					<li> <a href="./aboutme.html"> About</a> </li>
+					<li> <a href="./professionalexperience.html"> Portfolio </a> </li>
+					<li> <a href="./personal.html"> Personal </a> </li>
+					<li> <a href="./experiments.html" class="active"> Experiments </a></li>
+					<li> <a href="../form-no-js.html"> FormNoJs </a> </li>
+					<li> <a href="../form-with-js.html"> FormWithJs </a> </li>
+
+				</ul>
+			</nav>
+		</header>
+
+		<main>
+			<header class="mainHeader">
+				<br>
+				<h2>
+					Experiments
+				</h2>
+				<br>
+				<hr>
+			</header>
+
+			<section class="firstSection">
+				<h2>
+					Template
+				</h2>
+				<div class="singleFigure">
+					<figure>
+						<template>
+
+						</template>
+						<figcaption>
+							Figure 1: Template Tag
+						</figcaption>
+						<p class="objectExplanation"> 
+							Used to show content that is normally hidden. <br>
+							Does not work due to no JS.
+						</p>
+					</figure>
+				</div>
+			</section>
+			<hr>
+			<section class="showOffs">
+				<h2>
+					Audio
+				</h2>
+				<div class="singleFigure">
+
+					<figure>
+						<audio controls>
+							<source src="../audio/Chateau.mp3" type="audio/mpeg">
+						</audio>
+
+						<figcaption> Figure 2: A tag that plays audio files</figcaption>
+					</figure>
+				</div>
+			</section>
+			<hr>
+			<section class="showOffs">
+				<h2>
+					Canvas
+				</h2>
+				<div class="singleFigure">
+
+					<figure>
+						<canvas id="myCanvas">
+							Turn on JS to get this to work!
+						</canvas>
+
+						<figcaption> Figure 3: A canvas that can be drawn on</figcaption>
+					</figure>
+					<script>
+						const canvas = document.getElementById("myCanvas");
+						const ctx = canvas.getContext("2d");
+						ctx.fillStyle = "purple";
+						ctx.fillRect(0, 300, 0, 150)
+						ctx.fillStyle = "Green";
+						ctx.fillRect(30, 50, 140, 80);
+						ctx.fillStyle = "orange";
+						ctx.fillRect(85, 50, 40, 80);
+					</script>
+				</div>
+
+			</section>
+			<hr>
+			<section>
+				<h2>
+					Source Tag
+				</h2>
+				<div class="singleFigure">
+					<figure>
+						<picture>
+							<source srcset="../images/HappyBub.png" type="image/png">
+							<img src="../images/develScary.png" 
+							alt="An image of a blue dragon with yellow spikes, pink
+							arms and legs, yellow dots in the middle of the hands
+							and feet, one buck tooth, wide white happy eye,
+							white claws, jumping high in the air with one arm outstretched."
+							>
+						
+						</picture>
+						<figcaption> Figure 4: Used to give tags like picture and audio multiple sources as fallback </figcaption>
+					</figure>
+				</div>
+
+			</section>
+			<hr>
+			<section>
+				<h2>
+					MathML
+				</h2>
+				<div class="singleFigure">
+					<figure>
+						<math xmlns="http://www.w3.org/1998/Math/MathML">
+							<mi>E</mi>
+							<mo>=</mo>
+							<mi>m</mi>
+							<msup>
+								<mi>c</mi>
+								<mn>2</mn>
+							</msup>
+						</math>
+						<figcaption>
+							Figure 5: Einstien's Energy Equation using MathML
+						</figcaption>
+						<p>
+							Not used until recently since Chrome didn't support it for 
+							the longest due to instability and security concerns. 
+						</p>
+					</figure>
+				</div>
+			</section>
+
+
+
+
+		</main>
+		<footer>
+			<small> © 2026 Anthony Estrella. All rights reserved.</small>
+		</footer>
+	</body>
+
+</html>

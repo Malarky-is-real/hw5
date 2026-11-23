@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<!---METAS-->
+		<meta charset="utf-8">
+		<meta name="description" content="Personal Website">
+		<meta name="Author" content="Anthony Estrella">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="view-transition" content="same-origin">
+
+		<title>Anthony's Website</title>
+
+		<!---Links-->
+		<link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+		<link rel="stylesheet" href="../styles/style.css">
+	</head>
+
+	<body>
+
+		<header class="bodyHeader">
+			<div class="titleImage">
+				<h1>Anthony Estrella</h1>
+				<picture>
+					<source srcset="../images/iconBigger.webp" type="image/webp">
+					<img 
+					src="../images/iconBigger.png" 
+					alt="Image of placeHolder social icon"
+					width="50"
+					height="50"
+					>	   
+				</picture>
+			</div>
+			<nav>
+				<ul>
+					<li> <a href="./index.html"> Homepage </a> </li>
+					<li> <a href="./pages/aboutme.html"> About</a> </li>
+					<li> <a href="./pages/professionalexperience.html"> Portfolio </a> </li>
+					<li> <a href="./pages/personal.html"> Personal </a> </li>
+					<li> <a href="./pages/experiments.html"> Experiments </a></li>
+					<li> <a href="./form-no-js.html" class="active"> FormNoJs </a> </li>
+					<li> <a href="./form-with-js.html" > FormWithJs </a> </li>
+
+				</ul>
+			</nav>
+		</header>
+
+
+
+		<main>
+			<header class="mainHeader">
+				<br>
+                <h2>
+					Contact Me
+				</h2>
+				<br>
+				<hr>
+			</header>
+
+			<section class="firstSection">
+				<dialog>
+					<h2>
+						Form Subitted
+					</h2>
+
+					<p> 
+						Your contact request has been submitted, 
+						expect a response in <em> 5 </em> business days.
+						
+
+					</p>
+				</dialog>
+				<noscript>
+					<p>
+						No Javascript enabled... 
+						Here's my Email!
+					</p>
+					<strong> anthonylestrella06@gmail.com</strong>
+				</noscript>
+				<form class="contactForm" method="post" action="https://httpbin.org/post" id="contactForm">
+					<fieldset>
+						<legend>
+							Contact Form
+						</legend>
+						<div class="formRow">
+							<label for="Name" > Name (required) </label>
+							<input type="text" id="Name" name="Name"  aria-describedby="formStatus" autocomplete="name"  minlength="1" maxlength="100" required  placeholder="Enter your name! 1-100 characters. ">
+						</div>
+						<br> 
+						<div class="formRow">
+							<label for="Email"> Email (required) </label>
+							<input type="email" id="Email" maxlength="254" minlength="3" name="Email" aria-describedby="formStatus" placeholder="abc@hostname.com" required autocomplete="email">
+						</div>
+						<br> 
+
+
+						<div class="formRow">
+							<label for="Comments"> Comments (required) </label>
+							<textarea id="Comments" name="Comments" aria-describedby="formStatus" minlength="10" maxlength="1000" required placeholder="Leave between a 10 - 1000 character comment!"></textarea>						
+						</div>
+
+						<div class="jsOff">
+							<span id="charCount"  class="notNear" role="status" aria-live="polite">Character Count: 1000 </span>
+						</div>
+
+						
+						<div>
+							<label for="possible_bot"></label>
+							<input type="hidden" id="possible_bot" name="possible_bot" value="true">
+						</div>
+						
+						<div>
+							<label for="form-errors"></label>
+							<input type="hidden" id="form-errors" name="form-errors" value="true">
+						</div>
+					
+					
+						<br>
+						<div class="jsOff">
+							<span id="formStatus" class="jsDependant" role="status" aria-live="polite">The status of your form will appear here!</span>
+						</div>
+						<br>
+						<div class="formRow">
+							<button id="submitButton" type="submit"> Submit </button>
+						</div>
+
+					</fieldset>
+				</form>
+			</section>
+
+			<hr>
+		</main>
+		
+		<footer>
+			<small> © 2026 Anthony Estrella. All rights reserved.</small>
+		</footer>
+
+
+	</body>
+
+</html>

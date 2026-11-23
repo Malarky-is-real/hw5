@@ -1,0 +1,972 @@
+
+
+:root{
+    background: var(--pageBackground);
+    font-family: "Lucida Grande", "Lucida Sans Unicode", verdana, lucida, 	helvetica, sans-serif;
+    color: black;
+    max-width: 60em;
+    padding: 0em;
+    width: 95%;
+    margin: 0 auto;
+        --pageBackground: #070707;
+        --defaultBorderColor: white;
+        --defaultBorder: .3125em solid var(--defaultBorderColor);
+        --defaultValidColor: green;
+        --defaultWarningBorderColor: red;
+        --defaultWarningTextColor: red;
+        --light3background: white;
+        --light2Background: rgb(208, 229, 248);
+        --light1Background: #a3d1ff;
+        --defaultBackground: #99CCFF;
+        --dark1Background: #045FCD;
+        --dark2Background: #034AA0;
+        --dark3Background:  #023573;
+        --navTextColor: white;
+        --hoverNavTextColor: white;
+        --figureBackground: #7FBFFF;
+        
+        --formBackgroundColor: aliceblue;
+        --formTextColor: var(--dark3Background);
+        --defaultTextColor: black;
+
+        --headerGradientOne: #155b82;
+        --headerGradientTwo: #1f77a6;
+        --headerGradientThree: #2b91c0;
+
+        --defaultHeadingColor: rgb(28, 28, 28);
+}
+
+
+
+[data-theme="dark"]{
+        --pageBackground: #070707;
+        
+        --light3background: rgb(2, 9, 48);
+        --light2Background: rgb(3, 37, 66);
+        --light1Background: #040f1b;
+        --defaultBackground: #023263;
+        --dark1Background: #04244b;
+        --dark2Background: #042e63;
+        --dark3Background:  #042244;
+        --navTextColor: rgb(173, 159, 159);
+        --hoverNavTextColor: rgb(167, 157, 157);
+        --defaultBorderColor: var(--light2Background);
+        --defaultBorder: .3125em solid var(--defaultBorderColor);
+        --figureBackground: #0c2a47;
+        --formBackgroundColor: rgb(86, 89, 92);
+
+        --formTextColor: black;
+
+        --defaultTextColor: #E8E8E8;
+        --defaultHeadingColor: #E8E8E8;
+
+        --headerGradientOne: #0f405a;
+        --headerGradientTwo: #07202e;
+        --headerGradientThree: #2b91c0;
+
+        --headerGradientOne: var(--light1Background);
+        --headerGradientTwo: var(--light2Background);
+        --headerGradientThree: var(--dark1Background);
+
+        --defaultValidColor: rgb(0 255 0);
+        --defaultWarningBorderColor: #ff0000;
+        --defaultWarningTextColor: #ff8a8a;
+}
+
+p, li, h2, h4, footer, hello-world{
+    color: var(--defaultTextColor);
+}
+
+
+
+
+.bodyHeader{
+    border-bottom: 5px solid  var(--light2Background);
+
+
+}
+
+.titleImage{
+    border-bottom: 5px solid var(--light2Background);
+    background-image: linear-gradient(to bottom, var(--defaultBackground) 50%, var(--dark2Background) 99%, var(--dark2Background)  100%);
+
+}
+
+/*
+    Gets a picture tag only if it's the DIRECT CHILD of a container with the 
+    titleImage class 
+    OR
+    Gets a picture tag only if it's the descendant the page icon tag who's 
+    the DIRECT CHILD of a container with the title imag class 
+*/
+.titleImage > picture, 
+.titleImage > page-icon picture{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: .8em;
+    
+}
+
+
+
+/*
+    Gets a ul tag if it's the descedant of a nav tag. 
+    The nav tag has to be the direct child of a container with the
+        .bodyHeader class
+
+*/
+.bodyHeader > nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content:space-evenly;
+}
+
+/*
+    Gets a li tag if it's the descendant of a ul tag. 
+    The ul tag has to be the descendant of a nav tag.
+    The nav tag is then the direct child of a container with the
+        bodyHeader class.
+
+*/
+
+.bodyHeader > nav ul li{
+    flex: 1;
+    float: left;    
+}
+
+/*
+    Gets an <a> tag if it's the descendant of a li tag.
+    The li tag if it's the descendant of a ul tag. 
+    The ul tag has to be the descendant of a nav tag.
+    The nav tag is then the direct child of a container with the
+        bodyHeader class.
+
+                                OR
+        
+    Gets a button tag if it's the direct child of a container with the
+        formRow class.
+
+*/
+.bodyHeader > nav ul li a,.navItem, .formRow > button{
+    display: block;
+    color: var(--navTextColor);
+    background-color: var(--dark2Background);
+    text-align: center;
+}
+/*
+    Gets an <a> tag if it's the descendant of a li tag.
+    The li tag if it's the descendant of a ul tag. 
+    The ul tag has to be the descendant of a nav tag.
+    The nav tag is then the direct child of a container with the
+        bodyHeader class.
+*/
+.bodyHeader > nav  ul li a, .navItem{
+
+    padding: 1.5em 1em; 
+    text-align: center;   
+    text-decoration: none;
+}
+
+.navItem{
+    width: 100%;
+    height: 100%;
+    font-size: .9em;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", verdana, lucida, 	helvetica, sans-serif;
+}
+
+/*
+    Gets an <a> tag if it's the descendant of a li tag.
+    The li tag if it's the descendant of a ul tag. 
+    The ul tag has to be the direct child of a nav tag.
+    The nav tag is then the direct child of a container with the
+        bodyHeader class.
+
+    The style changes the look of the <a> tag if it's reached by assistive 
+    technology or non mice methods (tabbing). 
+*/
+.bodyHeader > nav  a:focus-visible,.formRow > button:focus-visible, .navItem:focus-visible {  
+    color: var(--navTextColor);
+    background-color:  var(--dark1Background);
+    text-decoration: underline;
+    
+}
+
+/*
+    Gets an <a> tag if it's the descendant of a li tag.
+    The li tag if it's the descendant of a ul tag. 
+    The ul tag has to be the descendant of a nav tag.
+    The nav tag is then the direct child of a container with the
+        bodyHeader class.
+    
+    The style changes the look of the <a> tag if the mouse is hovered over it
+
+                                OR
+        
+    Gets a button tag if it's the direct child of a container with the
+        formRow class.
+
+    The style changes the look of the button tag if the mouse is hovered over it
+
+
+*/
+.bodyHeader > nav ul li a:hover,.navItem:hover, .formRow > button:hover{  
+    color: var(--hoverNavTextColor);
+    background-color:  var(--dark1Background);
+    text-decoration: underline;
+    
+}
+
+
+/*
+    Gets an <a> tag if it's the descendant of a li tag.
+    The li tag if it's the descendant of a ul tag. 
+    The ul tag has to be the descendant of a nav tag.
+    The nav tag is then the direct child of a container with the
+        bodyHeader class.
+    
+    The style changes the look of the <a> tag if the mouse is hovered over it
+
+                                OR
+        
+    Gets a button tag if it's the direct child of a container with the
+        formRow class.
+
+    The style changes the look of the button tag if the mouse is hovered over it
+
+
+*/
+.bodyHeader > nav ul li a:focus,.navItem:focus, .formRow > button:focus{  
+    color: var(--hoverNavTextColor);
+    background-color:  var(--dark1Background);
+    text-decoration: underline;
+    
+}
+
+
+
+
+/*
+    Gets an <a> tag if it has the active class. 
+    Active class <a> if it's the descendant of a li tag.
+    The li tag if it's the descendant of a ul tag. 
+    The ul tag has to be the descendant of a nav tag.
+    The nav tag is then the direct child of a container with the
+        bodyHeader class.
+    
+    The style changes the look of the <a> tag if the mouse is hovered over it or 
+    it has been focused by tabbing
+    
+*/
+.bodyHeader > nav ul li a.active:focus,
+.bodyHeader > nav ul li a.active:hover,
+.navItem.active:focus,
+.navItem.active:hover{
+    background-color:  var(--dark3Background);   
+}
+
+
+/*
+    Gets an <a> tag if it has the active class. 
+    Active class <a> if it's the descendant of a li tag.
+    The li tag if it's the descendant of a ul tag. 
+    The ul tag has to be the descendant of a nav tag.
+    The nav tag is then the direct child of a container with the
+        bodyHeader class.
+    
+    
+*/
+.bodyHeader > nav  ul li a.active{
+    font-style: italic;
+    
+}
+
+.mainHeader{
+    
+    display:block;
+    align-items: center;
+    background-image: linear-gradient(to top,var(--defaultBackground) 0%, var(--dark2Background) 99%, var(--dark2Background)  100%);
+}
+
+
+/*
+    Gets an h2 tag if it's the direct child of a container with the .mainHeader
+    class.
+    
+*/
+
+.mainHeader > h2{
+    margin: 0;
+    view-transition-name: title;
+
+}
+
+.firstSection{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.firstSectionInfo{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/*
+    Gets an img tag if it's the descendant of the picture tag. 
+    The picture tag if it's the direct child of a container with the 
+        .firstSectionInfo class
+
+    
+    
+*/
+
+.firstSectionInfo > picture img{
+    color: var(--defaultTextColor);
+    border: .2em var(--defaultBorderColor) solid;
+    margin: 0.5em;
+    object-fit: cover;
+    background-color: var(--figureBackground);
+}
+
+.objectExplanation{
+    text-align: center;
+}
+
+.showOffs{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+}
+
+
+/*
+    Gets an div tag if it's the descendant of the showOffs tag.    
+    
+*/
+
+.showOffs div{
+    display: flex;
+    justify-content:space-evenly;
+    align-content:center;
+}
+
+.cardShowOffs{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+    align-content:center;
+    align-items: center;
+}
+
+/*
+    Gets an img tag if it's the descendant of a container with .cardShowOffs 
+    class. 
+
+                                OR
+        
+    An audio tag    
+*/
+
+.cardShowOffs img, audio{
+    background-color: var(--dark1Background);
+    border: .3em solid var(--dark2Background);
+    border-radius: 10px;
+}
+
+/*
+    Gets an img tag if it's the descendant of a container with .sideCards 
+     class.  
+*/
+.sideCards img{
+    width: 50%;
+    height: 50%;
+}
+
+/*
+    Gets a container with .individualFigure class 
+                                OR
+    Gets a container with .singleFigure class 
+
+
+*/
+.individualFigure, .singleFigure{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: var(--defaultTextColor);
+    border: thin var(--defaultBorderColor) solid;
+    margin: 0.5em;
+    padding: 0.5em;
+    
+    
+}
+
+/*
+    Gets an img if it's the descendant of a container with .individualFigure 
+        class 
+                                OR
+    Gets an iframe if it's the descendant of a container with .individualFigure 
+        class 
+                                OR
+    Gets an canvas if it's the descendant of a container with .individualFigure 
+        class 
+                                OR
+    Gets an img if it's the descendant of a container with .singleFigure 
+        class 
+                                OR
+    Gets an iframe if it's the descendant of a container with .singleFigure 
+        class 
+                                OR
+    Gets an canvas if it's the descendant of a container with .singleFigure 
+        class 
+
+*/
+
+.individualFigure img, 
+.individualFigure iframe,
+.individualFigure canvas,
+.singleFigure img, 
+.singleFigure iframe,
+.singleFigure canvas{
+    max-width: 100%;
+    height: auto;
+
+}
+/*
+    Gets an audio if it's the descendant of a container with .individualFigure 
+        class 
+                                OR
+    Gets an audio if it's the descendant of a container with .singleFigure 
+        class 
+
+*/
+.individualFigure audio,
+.singleFigure audio{
+    max-width: 100%;
+}
+
+/*
+    Gets an figcaption if it's the descendant of a container with .individualFigure 
+        class 
+                                OR
+    Gets an figcaption if it's the descendant of a container with .singleFigure 
+        class 
+
+*/
+.individualFigure figcaption,
+.singleFigure figcaption{
+    padding: 1em;
+    font-size: 95%;
+
+}
+
+
+/*
+    Gets an iframe if it's the descendant of a container with .individualFigure 
+        class 
+
+*/
+.individualFigure  iframe, .singleFigure iframe {
+    display: block;
+    width: 100%;
+    margin-top: .5em;
+    height: 20em;
+}
+
+.singleFigure{
+    margin: 1em 15em;
+    padding: 1em .2em;
+}
+
+/*
+    Gets an img if it's the subsequent-sibiling of a container with .cardBox
+    and shares the same parent. 
+    aka
+    img inside .cardBox, any other cardBoxes afterwards. 
+
+*/
+.cardBox ~ img{
+    border: .3em solid var(--defaultBorderColor);
+}
+
+.listSection{
+    display: flex;
+    flex-direction: column;
+}
+
+.listsGroup{
+    display: flex;
+    flex-direction: row;
+}
+
+.individualListSection{
+    list-style: circle;
+    align-items: center;
+    border: var(--defaultBorder);
+    background-color: var(--figureBackground);
+}
+
+.sectionBreaker{
+    border-style: dashed;
+}
+
+.svgFigure{
+    background-image: linear-gradient(to bottom, var(--headerGradientOne) 0%, var(--headerGradientTwo) 50%, var(--headerGradientThree) 100%);
+}
+
+.randomSection{
+    background-image: linear-gradient(to right, var(--headerGradientOne) 0%, var(--headerGradientTwo) 50%, var(--headerGradientThree) 100%);
+
+}
+/*
+    Gets a fieldset tag
+                                OR
+    Gets a container with the individualFigure class
+                                OR
+    Gets a container with the singleFigure class
+
+
+*/
+
+fieldset, .individualFigure, .singleFigure{
+    background-color: var(--figureBackground);
+}
+.formRow{
+    display: flex;
+    flex-direction: column;
+    margin: 0em .3em;
+    color: var(--defaultHeadingColor);
+    
+}
+
+#formStatus{
+    border-radius: .1em;
+    border-width: .2em;
+    border-style: inset;
+    padding: .5em;
+    background-color: var(--light1Background);
+
+}
+
+
+.nearMax{
+    font-style:italic;
+    font-weight: bold;
+    text-decoration:underline;
+    color: var(--defaultTextColor);
+}
+
+.atMax{
+    font-style: oblique;
+    text-decoration:line-through;
+    font-weight: bold;
+}
+
+#charCount{
+    font-size: .8em;
+    text-align: right;
+}
+
+
+/*
+    Gets button tag if it's the descendant of a container with the formRow
+        class 
+
+   
+
+*/
+
+
+.formRow label{
+    display: block;
+    
+}
+
+/*
+    Gets input tag if it's the descendant of a container with the formRow
+        class 
+                                OR
+    Gets button tag if it's the descendant of a container with the formRow
+        class 
+                                    OR
+    Gets textarea tag if it's the descendant of a container with the formRow
+        class 
+
+*/
+
+.formRow input, 
+.formRow button, 
+.formRow textarea{
+    border-radius: .3em;
+    border-width: .2em;
+    border-style: inset;
+    padding: .5em;
+}
+
+/*
+    Gets textarea tag if it's the descendant of a container with the formRow
+        class 
+
+*/
+
+
+.formRow textarea{
+    padding: 1em 0em;
+    resize: vertical;
+}
+
+
+/*
+    Gets input tag if it's the descendant of a container with the formRow
+        class 
+    Focuses specifically on the text input
+*/
+
+.formRow input[type=text], 
+.formRow input[type=email],
+.formRow textarea, 
+#formStatus{
+    background-color: var(--formBackgroundColor);
+}
+
+/*
+    Get all required inputs and textareas placeholders
+*/
+textarea:required::placeholder, 
+input:required::placeholder{
+    text-decoration: underline;
+    color: var(--formTextColor);
+}
+
+
+legend{
+    color:var(--defaultTextColor);
+}
+
+/*
+    Get all invalid inputs and textareas placeholders
+*/
+textarea:user-invalid::placeholder, 
+input:user-invalid::placeholder{
+    color: var(--defaultWarningTextColor);
+    text-decoration: underline;
+}
+
+/*
+    Get all invalid inputs and textareas 
+*/
+textarea:user-invalid, 
+input:user-invalid{
+    border-color: var(--defaultWarningBorderColor);
+}
+
+
+/*
+    Get all valid inputs and textareas 
+*/
+textarea:user-valid, 
+input:user-valid{
+    border-color: var(--defaultValidColor);
+}
+
+
+
+/*
+    Gets button tag if it's the descendant of a container with the formRow
+        class 
+
+*/
+.formRow button{
+    padding: 1em 0em;
+    font-size: 1em;
+}
+
+/*
+    Gets button tag if it's the descendant of a container with the formRow
+        class 
+    
+    Only style the hover of a button when a mouse goes over it. 
+                                    OR
+    Gets button tag if it's the descendant of a container with the formRow
+        class 
+    Only style the focus  of a button when a mouse/keyboard goes over it.
+
+*/
+.formRow  button:hover, 
+.formRow  button:focus, 
+.formRow > button:focus-visible{
+    text-decoration: none;
+}
+
+.jsOff{
+    display: none;
+}
+
+
+
+
+math{
+    font-size: 2em;
+}
+
+/*
+    Gets an h1 tag
+                                OR
+    Gets an h2 tag
+                                OR
+    Gets an h3 tag
+                                OR
+    Gets an h4 tag
+
+*/
+h1, h2, h3, h4{
+    text-align: center;
+    
+
+}
+
+/*
+    Gets an h2 tag if it's the direct child of a section
+                                OR
+    Gets an h3 tag if it's the direct child of a section
+                                OR
+    Gets an h2 tag if it's the direct child of a section
+
+
+
+*/
+section > h2, section > h3, article > h2{
+    background-image: linear-gradient(to bottom, var(--headerGradientOne) 0%, var(--headerGradientTwo)  50%, var(--headerGradientThree)  100%);    
+} 
+
+h1 {
+    color: var(--defaultHeadingColor);
+    font-size: 3rem;
+    margin-bottom:20px;
+    text-align: center;
+    border-top: 5px solid var(--defaultBorderColor);
+
+}
+
+h2 {
+    color: var(--defaultHeadingColor);
+    font-size: 2rem;
+
+}
+
+h3 {
+    color: var(--defaultHeadingColor);
+    font-size: 1.5rem;
+
+}
+
+p{
+    line-height: 1.5;
+    overflow-wrap:break-word;
+    word-break: break-word;
+    hyphens: auto;
+}
+
+section{
+    padding:0px 1.3em;
+}
+
+
+body{
+
+    background: var(--defaultBackground);
+    border-left:  var(--defaultBorder);
+    border-right: var(--defaultBorder);
+    border-bottom: var(--defaultBorder);
+    margin: 0 auto;
+
+
+}
+
+footer{
+    border-top: 2px solid var(--defaultBorderColor);
+    text-align: center;
+    background-image: linear-gradient(var(--defaultBackground) 1%, var(--dark2Background) 98%, var(--dark2Background)  100%);
+}
+
+canvas{
+    background-color: var(--light1Background);
+}
+
+@media screen and (max-width: 980px){
+    nav ul li a, .navItem{
+        font-size: .8em ;
+    }
+
+}
+
+@media screen and (max-width: 960px){
+    /*
+        Gets an div tag if it's the direct child of a container with the 
+        showOffs class
+    */
+    .showOffs > div{
+        display: flex;
+        flex-direction: column;
+    
+    }
+    .singleFigure{
+        margin: 0em;
+        padding: 0em;
+    }
+    .figures{
+        min-width: 1rem;
+        padding: 0em 10em;
+        margin: 0 auto;
+
+    }
+    .listsGroup{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .individualListSection{
+        margin-top: 1em;
+    }
+    
+}
+
+@media screen and (max-width: 900px){
+
+    /*
+        Gets a ul tag if it's the descedant of a nav tag. 
+        The nav tag has to be the direct child of a container with the
+            .bodyHeader class
+
+    */
+    .bodyHeader > nav ul{
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    /*
+        Gets an <a> tag if it's the descendant of a li tag.
+        The li tag if it's the descendant of a ul tag. 
+        The ul tag has to be the descendant of a nav tag.
+        The nav tag is then the direct child of a container with the
+            bodyHeader class.
+    */
+    .bodyHeader > nav  ul li a, .navItem{
+        border-top: .2em solid var(--light2Background);       
+    }
+    
+    .firstSectionInfo{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+    /*
+        Gets an img tag if it's the descendant of the picture tag. 
+        The picture tag if it's the direct child of a container with the 
+            .firstSectionInfo class
+
+        
+        
+    */
+    .firstSectionInfo > picture img{
+        object-fit: fill;
+        background-color: var(--figureBackground);
+
+    }
+    /*
+        Gets an div tag if it's the direct child of a container with the 
+        showOffs class
+    */
+    .showOffs > div{
+        display: flex;
+        flex-direction: column;
+
+
+        
+    }
+
+    .figures{
+        min-width: 1rem;
+        padding: 0em 0em;
+
+    }
+
+    .individualFigure, .singleFigure {
+       
+       min-width: 5rem;
+       padding: 0em 2em;
+       
+    }
+
+    /*
+        Gets an img tag if it's the direct child of a picture tag
+    */
+    picture > img{
+        max-width: 100%;
+        height: auto;
+        
+    }
+    
+}
+
+/* 1. Enable View Transitions for the page */
+@view-transition {
+  navigation: auto;
+}
+
+/* 2. Define the slide-out animation (Old page moving left) */
+@keyframes slide-out-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100vw);
+  }
+}
+
+/* 3. Define the slide-in animation (New page coming from the right) */
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100vw);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+::view-transition-old(root) {
+  animation: 0.4s ease-in-out both slide-out-left;
+}
+
+::view-transition-new(root) {
+  animation: 0.4s ease-in-out both slide-in-right;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
+
+.titleImage>picture {
+  animation: slideInPicture 1.2s ease-out forwards;
+}
+
+@keyframes slideInPicture {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

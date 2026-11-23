@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<!---METAS-->
+		<meta charset="utf-8">
+		<meta name="description" content="Personal Website">
+		<meta name="Author" content="Anthony Estrella">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="view-transition" content="same-origin">
+
+		<title>Anthony's Website</title>
+
+		<!---Links-->
+		<link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+		<link rel="stylesheet" href="../styles/style.css">
+	</head>
+
+	<body>
+
+		<header class="bodyHeader">
+			<div class="titleImage">
+				<h1>Anthony Estrella</h1>
+				<picture>
+					<source srcset="../images/iconBigger.webp" type="image/webp">
+					<img 
+					src="../images/iconBigger.png" 
+					alt="Image of placeHolder social icon"
+					width="50"
+					height="50"
+					>	   
+				</picture>
+			</div>
+			<nav>
+				<ul>
+					<li> <a href="../index.html"> Homepage </a> </li>
+					<li> <a href="./aboutme.html"> About</a> </li>
+					<li> <a href="./professionalexperience.html"> Portfolio </a> </li>
+					<li> <a href="./personal.html"> Personal </a> </li>
+					<li> <a href="./contactme.html" class="active"> Contact </a> </li>
+					<li> <a href="./experiments.html"> Experiments </a></li>
+					<li> <a href="../form-no-js.html"> FormNoJs </a> </li>
+					<li> <a href="../form-with-js.html"> FormWithJs </a> </li>
+
+
+				</ul>
+			</nav>
+		</header>
+
+
+
+		<main>
+			<header class="mainHeader">
+				<br>
+                <h2>
+					Contact Me
+				</h2>
+				<br>
+				<hr>
+			</header>
+
+			<section class="firstSection">
+				<dialog>
+					<h2>
+						Form Subitted
+					</h2>
+
+					<p> 
+						Your contact request has been submitted, 
+						expect a response in <em> 5 </em> business days.
+						
+
+					</p>
+				</dialog>
+				<noscript>
+					<p>
+						No Javascript enabled... 
+						Here's my Email!
+					</p>
+					<strong> anthonylestrella06@gmail.com</strong>
+				</noscript>
+				<form class="contactForm" method="post" action="https://httpbin.org/post">
+					<fieldset>
+						<legend>
+							Contact Form
+						</legend>
+						<div class="formRow">
+							<label for="Name" > Name </label>
+							<input type="text" id="Name" name="Name" autocomplete="name"  minlength="1" maxlength="100" required  placeholder="Enter your name! 1-100 characters. ">
+						</div>
+						<br> 
+						<div class="formRow">
+							<label for="Email"> Email </label>
+							<input type="email" id="Email" name="Email" placeholder="abc@hostname.com" required autocomplete="email">
+						</div>
+						<br> 
+
+						<div class="formRow">
+							<label for="Number"> Number </label>
+							<input type="tel" id="Number" name="Number" placeholder="Phone Number (xxx-xxx-xxxx)">
+						</div>
+
+
+						<br> 
+						<div class="formRow">
+							<label for="comments"> Comments </label>
+							<textarea id="comments" name="comments" minlength="10" maxlength="1000" required placeholder="Leave up to an 1000 word comment!"></textarea>						
+						</div>
+						
+						<div>
+							<label for="possible_bot"></label>
+							<input type="hidden" id="possible_bot" name="possible_bot" value="true">
+						</div>
+					
+						<br>
+						<div class="formRow">
+							<button> Submit </button>
+						</div>
+
+					</fieldset>
+				</form>
+			</section>
+
+			<hr>
+		</main>
+		
+		<footer>
+			<small> © 2026 Anthony Estrella. All rights reserved.</small>
+		</footer>
+
+
+	</body>
+
+</html>
