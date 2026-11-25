@@ -1,3 +1,7 @@
+---
+import Footer from '../layouts/footLayout.astro';
+---
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,9 +28,9 @@
 
 				<h1>Anthony Estrella</h1>
 				<picture class="headerIcon" >
-							<source srcset="./images/iconBigger.webp" type="image/webp">
+							<source srcset="/images/iconBigger.webp" type="image/webp">
 							<img 
-								src="./images/iconBigger.png" 
+								src="/images/iconBigger.png" 
 								alt="Image of placeHolder social icon"
 								width="50"
 								height="50"
@@ -179,9 +183,7 @@
 			
 
 		</main>
-		<footer>
-			<small> © 2026 Anthony Estrella. All rights reserved.</small>
-		</footer>
+		<Footer/>
 	</body>
 
 </html>

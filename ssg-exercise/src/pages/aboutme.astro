@@ -1,3 +1,6 @@
+---
+import Footer from '../layouts/footLayout.astro';
+---
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +15,7 @@
 		<title>Anthony's Website</title>
 
 		<!---Links-->
-		<link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+		<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 		<link rel="stylesheet" href="/styles/style.css">
 
 	</head>
@@ -34,7 +37,7 @@
 			<nav>
 				<ul>
 					<li> <a href="/"> Homepage </a> </li>
-					<li> <a href="./aboutme.html" class="active"> About</a> </li>
+					<li> <a href="/aboutme" class="active"> About</a> </li>
 
 				</ul>
 			</nav>
@@ -57,8 +60,8 @@
 
 					<div class="firstSectionInfo">
 						<picture>
-							<source srcset="../images/anthonyAbout.webp" type="image/webp">
-							<img src="../images/anthonyAbout.png" alt="Image of Anthony Estrella by himself">
+							<source srcset="/images/anthonyAbout.webp" type="image/webp">
+							<img src="/images/anthonyAbout.png" alt="Image of Anthony Estrella by himself">
 						</picture>
 						<div class="sideText">
 							<h3>
@@ -124,9 +127,7 @@
 				</section>
 			</article>
 		</main>
-		<footer>
-			<small> © 2026 Anthony Estrella. All rights reserved.</small>
-		</footer>
+		<Footer/>
 	</body>
 
 </html>
