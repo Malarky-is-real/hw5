@@ -372,11 +372,22 @@ p, li, h2, h4, footer, hello-world{
     An audio tag    
 */
 
-.cardShowOffs img, audio{
+.cardShowOffs img, audio, dog-ceo img{
     background-color: var(--dark1Background);
     border: .3em solid var(--dark2Background);
     border-radius: 10px;
 }
+
+
+dog-ceo{
+    padding: 0em 1.5em;
+    background-color: var(--light1Background, lightblue);
+}
+
+dog-ceo span{
+    background: var(--figureBackground, white);
+}
+
 
 /*
     Gets an img tag if it's the descendant of a container with .sideCards 
@@ -909,7 +920,7 @@ canvas{
     /*
         Gets an img tag if it's the direct child of a picture tag
     */
-    picture > img{
+    picture > img, img{
         max-width: 100%;
         height: auto;
         

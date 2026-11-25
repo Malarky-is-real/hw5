@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping list example</title>
+    <style>
+      li {
+        margin-bottom: 10px;
+      }
+
+      li button {
+        font-size: 12px;
+        margin-left: 20px;
+        color: #b63d3d;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1>My shopping list</h1>
+
+    <form>
+      <label for="item">Enter a new item:</label>
+      <input type="text" name="item" id="item">
+      <button>Add item</button>
+    </form>
+
+    <ul>
+
+    </ul>
+
+    <script>
+      const addButton = document.querySelector('button')
+      addButton.addEventListener("click", addToList)
+      function addToList(e){
+        e.preventDefault()
+        const ul = document.querySelector('ul')
+        const InputField = document.querySelector('#item')
+        console.log(InputField.value)
+        
+        
+        const deleteButton = document.createElement('button')
+        deleteButton.textContent = "Delete"
+        deleteButton.addEventListener('click', deleteListElem)
+
+        const textArea = document.createElement('span')
+        textArea.textContent = InputField.value
+        
+        const listElement = document.createElement('li')
+        listElement.appendChild(textArea)
+        listElement.appendChild(deleteButton)
+
+        ul.appendChild(listElement)
+
+        InputField.focus()
+
+      }
+
+      function deleteListElem(e){
+        console.log(e.target.parentElement.querySelector('span'))
+        e.target.parentElement.remove()
+        
+      }
+    </script>
+  </body>
+</html>
